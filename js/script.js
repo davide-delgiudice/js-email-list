@@ -7,7 +7,9 @@ const mailButton = document.getElementById('btn-mail');
 
 const endpoint = `https://flynn.boolean.careers/exercises/api/random/mail`;
 
-function getEmail() {
+const play = () => {
+    mailList.innerHTML = '';
+
     for(i=0; i<10; i++) {
         axios.get(endpoint).then( mail => {
             let oneMail = mail.data.response;
@@ -20,4 +22,4 @@ function getEmail() {
     }
 };
 
-getEmail();
+mailButton.addEventListener('click', play);
