@@ -1,6 +1,7 @@
 // recupero gli elementi del DOM che mi servono
 
 const mailList = document.getElementById('lista-mail');
+const mailButton = document.getElementById('btn-mail');
 
 // dichiaro le variabili che mi servono
 
