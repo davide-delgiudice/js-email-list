@@ -4,5 +4,13 @@ const mailList = document.getElementById('lista-mail');
 
 // dichiaro le variabili che mi servono
 
-const endpoint = `https://flynn.boolean.careers/exercises/api/random/mail`;
+const endpoint = `https://flynn.boolean.careers/exercises/api/random/mail?`;
+
+axios.get(endpoint).then( mail => {
+
+    oneMail = mail.data.response;
+
+    console.log(oneMail);
+
+});
 
