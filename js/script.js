@@ -9,16 +9,16 @@ const endpoint = `https://flynn.boolean.careers/exercises/api/random/mail`;
 const allMail = [];
 
 function getEmail() {
-    axios.get(endpoint).then( mail => {
-        
-        for(i=0; i<10; i++) {
+
+    for(i=0; i<10; i++) {
+        axios.get(endpoint).then( mail => {
             let oneMail = mail.data.response;
             if(oneMail[i] != oneMail){
-                allMail.push(secondMail);
+                allMail.push(oneMail);
             }
-        }
-        
-        console.log(allMail);    
-    });
-}
+            console.log(allMail);
+        })
+    }
+};
 
+getEmail();
