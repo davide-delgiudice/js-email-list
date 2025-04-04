@@ -10,14 +10,12 @@ const endpoint = `https://flynn.boolean.careers/exercises/api/random/mail`;
 const play = () => {
     mailList.innerHTML = '';
 
-    for(i=0; i<10; i++) {
+    for(let i=0; i<10; i++) {
         axios.get(endpoint).then( mail => {
             let oneMail = mail.data.response;
-            if(oneMail[i] != oneMail){
-                const listItem = document.createElement('li');
-                listItem.innerHTML = oneMail;
-                mailList.appendChild(listItem);
-            }
+            const listItem = document.createElement('li');
+            listItem.innerHTML = oneMail;
+            mailList.appendChild(listItem);
         })
     }
 };
